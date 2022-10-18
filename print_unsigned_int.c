@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_u - prints an unsigned in in decimal notation
  * @u: unsigned int to print
@@ -30,6 +31,7 @@ int print_u(va_list u)
 	}
 	return (count);
 }
+
 /**
  * print_o - takes an unsigned int and prints it in octal notation
  * @o: unsigned int to print
@@ -61,6 +63,7 @@ int print_o(va_list o)
 	}
 	return (count);
 }
+
 /**
  * print_b - takes an unsigned int and prints it in binary notation
  * @b: unsigned in to print

@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_hex - prints an unsigned int in hexidecimal form
  * @n: unsigned int to print
@@ -48,6 +49,7 @@ int print_x(va_list x)
 {
 	return (print_hex(va_arg(x, unsigned int), 0));
 }
+
 /**
  * print_X - takes am unsigned int and prints it in uppercase hex notation
  * @X: unsigned int to print
@@ -58,6 +60,7 @@ int print_X(va_list X)
 {
 	return (print_hex(va_arg(X, unsigned int), 1));
 }
+
 /**
  * _pow - calculates an exponent
  * @base: base of exponent
@@ -76,6 +79,7 @@ static unsigned long _pow(unsigned int base, unsigned int exponent)
 	}
 	return (ans);
 }
+
 /**
  * print_p - prints an address
  * @p: address to print

@@ -25,6 +25,7 @@ static int (*check_for_specifiers(const char *format))(va_list)
 		{"R", print_R},
 		{NULL, NULL}
 	};
+
 	for (i = 0; p[i].t != NULL; i++)
 	{
 		if (*(p[i].t) == *format)
@@ -58,21 +59,21 @@ int _printf(const char *format, ...)
 		}
 		if (!format[i])
 			return (count);
-			f = check_for_specifiers(&format[i + 1]);
-			if (f != NULL)
-			{
-				count += f(valist);
-				i += 2;
-				continue;
-			}
-			if (!format[i + 1])
-				return (-1);
-				_putchar(format[i]);
-				count++;
-				if (format[i + 1] == '%')
-					i += 2;
-				else
-					i++;
+		f = check_for_specifiers(&format[i + 1]);
+		if (f != NULL)
+		{
+			count += f(valist);
+			i += 2;
+			continue;
+		}
+		if (!format[i + 1])
+			return (-1);
+		_putchar(format[i]);
+		count++;
+		if (format[i + 1] == '%')
+			i += 2;
+		else
+			i++;
 	}
 	va_end(valist);
 	return (count);
